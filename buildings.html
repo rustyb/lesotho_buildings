@@ -8,6 +8,9 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.2/mapbox-gl.css' rel='stylesheet' />
     <script src="//api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js"></script>
     <link href="//mapbox.com/base/latest/base.css" rel="stylesheet">
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v0.0.0/mapbox-gl-geocoder.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v0.0.0/mapbox-gl-geocoder.css' type='text/css' />
     <style>
         
         #color-map { position:absolute; top:0; bottom:0; left: 0; right: 35%; }
@@ -105,6 +108,8 @@ var choro = new mapboxgl.Map({
   zoom: 10, // starting zoom
   hash: true
 })
+
+choro.addControl(new mapboxgl.Geocoder());
 
 choro.on('style.load', function() {
    
